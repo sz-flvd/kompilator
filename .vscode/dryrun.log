@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/szymon/Desktop/semestr 5/jftt/kompilator'
+bison -d -o parser.cpp parser.y
+flex -o lexer.cpp lexer.l
+g++ -c lexer.cpp
+bison -d -o parser.cpp parser.y
+g++ -c parser.cpp
+g++ -c symbol_table.cpp
+g++ -c code_gen.cpp
+g++ -c main.cpp
+g++ lexer.o parser.o symbol_table.o code_gen.o main.o -o kompilator
+make: Leaving directory '/home/szymon/Desktop/semestr 5/jftt/kompilator'
+ 
